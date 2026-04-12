@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BELULI — New Collection</title>
+  <title>BELULI — My Account</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -144,7 +144,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: clamp(56px, 8vh, 100px);
+      padding-bottom: 60px;
     }
 
     /* Image plein écran */
@@ -154,7 +154,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
+      object-position: center top;
       display: block;
     }
 
@@ -163,8 +163,8 @@
       content: '';
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 42%;
-      background: linear-gradient(to top, rgba(15,10,6,0.5) 0%, rgba(15,10,6,0.12) 55%, transparent 100%);
+      height: 30%;
+      background: linear-gradient(to top, rgba(15,10,6,0.35) 0%, transparent 100%);
       pointer-events: none;
     }
 
@@ -190,88 +190,48 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-end;
-      gap: 0;
+      gap: 12px;
     }
 
-    /* Bannière — disposition type LV : label / titre serif / lien souligné */
-    .hero-lv-kicker {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      text-transform: none;
-      font-weight: 400;
-      color: #fff;
-      margin: 0 0 16px;
-      line-height: 1.3;
-      text-shadow: 0 1px 16px rgba(0,0,0,0.45);
-    }
-
-    .hero-lv-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(40px, 5.5vw, 56px);
-      font-weight: 300;
-      color: #fff;
-      line-height: 1.08;
-      margin: 0 0 20px;
-      letter-spacing: 0.02em;
-      text-transform: none;
-      font-style: normal;
-      text-shadow: 0 2px 28px rgba(0,0,0,0.4);
-    }
-
-    .hero-lv-link {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      font-weight: 400;
-      color: #fff;
-      text-decoration: none;
-      text-transform: none;
-      border-bottom: 1px solid rgba(255,255,255,0.9);
-      padding-bottom: 5px;
-      display: inline-block;
-      transition: opacity 0.25s ease, border-color 0.25s ease;
-      text-shadow: 0 1px 12px rgba(0,0,0,0.35);
-    }
-
-    .hero-lv-link:hover {
-      opacity: 0.88;
-      border-bottom-color: rgba(255,255,255,0.65);
-    }
-
-
+    /* Tag — "NEW COLLECTION" */
     .hero-tag {
+      font-family: 'Jost', sans-serif;
       font-size: 10px;
-      letter-spacing: 4px;
+      letter-spacing: 6px;
       text-transform: uppercase;
-      color: var(--mid);
-      font-weight: 400;
-      margin-bottom: 20px;
-      display: block;
+      font-weight: 300;
+      color: white;
     }
 
+    /* Titre — "Desert Breeze" légèrement plus grand */
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(72px, 13vw, 160px);
+      font-size: clamp(36px, 4.5vw, 64px);
       font-weight: 300;
-      line-height: 0.95;
-      color: var(--charcoal);
-      margin-bottom: 36px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      font-style: italic;
+      color: white;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin: 0;
     }
 
-    .hero-title em {
-      font-style: italic;
-      font-size: 0.38em;
-      letter-spacing: 0.3em;
-      color: var(--accent);
-      display: block;
-      margin-bottom: 10px;
-      font-weight: 300;
+    /* Lien souligné — "Shop Now" */
+    .hero-link {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      font-weight: 300;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.6);
+      padding-bottom: 2px;
+      margin-top: 4px;
+      transition: opacity 0.3s;
     }
+    .hero-link:hover { opacity: 0.65; }
+
+
 
     .hero-subtitle {
       font-size: 11px;
@@ -432,7 +392,7 @@
       flex-direction: column;
       align-items: center;
       max-width: 420px;
-      margin: 20px auto 28px;
+      margin: 60px auto 0;
     }
 
     .sig-product-img {
@@ -485,28 +445,19 @@
 
     /* SIGNATURE */
     .signature {
-      padding: 48px 40px 0;
+      padding: 100px 40px;
       background: var(--warm-white);
-    }
-
-    .signature .section-header {
-      margin-bottom: 8px;
-    }
-
-    .signature .section-title {
-      margin: 0;
     }
 
     .signature-single {
       display: flex;
       justify-content: center;
-      margin-top: 0;
+      margin-top: 60px;
     }
 
     .signature-single .product-card {
       width: 100%;
       max-width: 380px;
-      margin-bottom: 0;
     }
 
     /* EDITORIAL — style magazine pleine largeur */
@@ -694,13 +645,13 @@
     /* NOTRE HISTOIRE */
     .histoire {
       background: var(--cream);
-      padding-bottom: 0;
+      padding-bottom: 100px;
     }
 
     .histoire-inner {
       display: grid;
       grid-template-columns: 55% 45%;
-      min-height: 600px;
+      min-height: 680px;
     }
 
     .histoire-photo {
@@ -766,67 +717,7 @@
     .histoire-cta::after { content: '→'; font-size: 12px; }
     .histoire-cta:hover { gap: 16px; color: var(--mid); }
 
-    /* Our Story — ligne produits (pleine largeur) */
-    .histoire-picks {
-      width: 100%;
-      max-width: none;
-      margin: 0;
-      padding: 48px 0 72px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-    }
-    .histoire-pick {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .histoire-pick-img {
-      overflow: hidden;
-      aspect-ratio: 3 / 4;
-      background: var(--border);
-    }
-    .histoire-pick-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.65s ease;
-    }
-    .histoire-pick:hover .histoire-pick-img img { transform: scale(1.03); }
-    .histoire-pick-meta {
-      padding: 14px clamp(16px, 2.5vw, 28px) 0;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 6px;
-    }
-    .histoire-pick-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px;
-      font-weight: 400;
-      color: var(--charcoal);
-      letter-spacing: 0.03em;
-      line-height: 1.25;
-    }
-    .histoire-pick-price {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-weight: 400;
-      color: var(--mid);
-      align-self: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .histoire-picks { grid-template-columns: repeat(2, 1fr); padding: 40px 0 56px; }
-    }
-    @media (max-width: 520px) {
-      .histoire-picks { grid-template-columns: 1fr; padding: 32px 0 48px; gap: 2px; }
-    }
-
-    /* VALUES */
+    /* VALUES/* VALUES */
     .values { padding: 100px 40px; background: var(--warm-white); }
     .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1200px; margin: 0 auto; }
     .value-card { padding: 60px 40px; border: 1px solid var(--border); text-align: center; transition: background 0.3s; }
@@ -1217,39 +1108,43 @@
       .logo-wrap img { height: 32px; }
       .logo-fallback { font-size: 18px; letter-spacing: 5px; }
 
-      /* Hero — même logique LV sur mobile : texte bas, centré, sur l’image */
+      /* Hero */
       .hero {
         height: 100svh;
         min-height: 100svh;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
-        padding: 0 24px max(40px, env(safe-area-inset-bottom));
+        padding: 80px 20px 40px;
       }
       .hero-content {
-        padding: 0 8px 8px;
+        padding: 32px 24px;
         text-align: center;
         width: 100%;
-        max-width: 520px;
+        max-width: 380px;
         margin: 0 auto;
-        background: none;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        border-radius: 0;
+        background: rgba(253, 251, 248, 0.82);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 4px;
       }
       .hero-bg-text { display: none; }
-      .hero-lv-kicker {
-        font-size: 9.5px;
+      .hero-tag {
+        font-size: 10px;
         letter-spacing: 0.2em;
         margin-bottom: 14px;
+        color: var(--charcoal);
+        font-weight: 500;
       }
-      .hero-lv-title {
-        font-size: clamp(34px, 9.5vw, 48px);
-        margin-bottom: 18px;
-      }
-      .hero-lv-link {
-        font-size: 10.5px;
-        letter-spacing: 0.1em;
-        padding-bottom: 4px;
+      .hero-title { font-size: clamp(40px, 11vw, 64px); margin-bottom: 16px; }
+
+      .hero-subtitle {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        margin-bottom: 28px;
+        color: #3d3a36;
+        font-weight: 400;
+        line-height: 1.65;
+        text-transform: none;
       }
 
       .hero-scroll {
@@ -1555,7 +1450,7 @@
       align-items: flex-start;
       gap: 8px;
       padding-bottom: 32px;
-      border-bottom: none;
+      border-bottom: 1px solid var(--border);
       margin-bottom: 8px;
     }
 
@@ -1691,12 +1586,203 @@
     }
     .nav-overlay.open { opacity: 1; pointer-events: all; }
 
+
+    /* ── PAGE ACCOUNT ── */
+    .account-page {
+      min-height: 100vh;
+      background: var(--warm-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 80px;
+    }
+
+    .account-card {
+      width: 100%;
+      max-width: 560px;
+      background: white;
+      box-shadow: 0 2px 40px rgba(26,20,14,0.06);
+    }
+
+    /* Tabs Log in / Register */
+    .account-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .account-tab {
+      padding: 24px 0;
+      text-align: center;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--mid);
+      cursor: pointer;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: -1px;
+    }
+
+    .account-tab.active {
+      color: var(--charcoal);
+      border-bottom: 2px solid var(--charcoal);
+      background: white;
+    }
+
+    .account-tab:not(.active) {
+      background: var(--cream);
+    }
+
+    .account-tab:not(.active):hover {
+      color: var(--charcoal);
+    }
+
+    /* Formulaire */
+    .account-form {
+      padding: 48px 56px 56px;
+      display: none;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .account-form.active {
+      display: flex;
+    }
+
+    .account-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .account-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--charcoal);
+    }
+
+    .account-input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      background: transparent;
+      padding: 12px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .account-input::placeholder {
+      color: rgba(26,20,14,0.3);
+    }
+
+    .account-input:focus {
+      border-bottom-color: var(--charcoal);
+    }
+
+    .account-btn {
+      width: 100%;
+      background: var(--charcoal);
+      color: white;
+      border: none;
+      padding: 18px;
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 400;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .account-btn:hover { opacity: 0.8; }
+
+    .account-forgot {
+      text-align: center;
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--mid);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(90,85,80,0.3);
+      padding-bottom: 1px;
+      align-self: center;
+      transition: color 0.2s;
+    }
+
+    .account-forgot:hover { color: var(--charcoal); }
+
+    .account-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 4px 0;
+    }
+
+    .account-divider::before,
+    .account-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .account-divider span {
+      font-family: 'Jost', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
+    .account-brand {
+      text-align: center;
+      padding-bottom: 8px;
+    }
+
+    .account-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--charcoal);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .account-brand-sub {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 8px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    .account-note {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: var(--mid);
+      text-align: center;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
   </style>
 </head>
 <body>
-
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announce">Livraison offerte dès 80€ &nbsp;·&nbsp; Retours gratuits sous 30 jours &nbsp;·&nbsp; Paiement sécurisé</div>
 
   <!-- HEADER -->
   <header>
@@ -1721,7 +1807,7 @@
           <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       </button>
-      <a href="account.html" class="header-icon" aria-label="My account">
+      <a href="account.html" class="header-icon" aria-label="My account" aria-current="page">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
         </svg>
@@ -1741,7 +1827,7 @@
     <div class="nav-drawer-inner">
       <button class="nav-drawer-close" id="nav-close">&times;</button>
       <div class="nav-drawer-brand">
-        <img src="belpng.png" alt="Beluli" class="nav-drawer-logo">
+        <a href="index.html"><img src="belpng.png" alt="Beluli" class="nav-drawer-logo"></a>
       </div>
       <nav class="nav-drawer-nav">
         <a href="index.html">Home</a>
@@ -1754,105 +1840,72 @@
   </div>
   <div class="nav-overlay" id="nav-overlay"></div>
 
-  <!-- HERO -->
-  <section class="hero" style="margin-top: 0;">
-    <img
-      class="hero-full-img"
-      src="oui.webp"
-      alt="BELULI — Desert Breeze collection"
-      fetchpriority="high"
-      decoding="async"
-    >
-    <div class="hero-content">
-      <p class="hero-lv-kicker">New collection</p>
-      <h2 class="hero-lv-title">Desert Breeze</h2>
-      <a href="shops.html" class="hero-lv-link">Shop now</a>
-    </div>
-  </section>
+  <!-- ACCOUNT PAGE -->
+  <div class="account-page">
+    <div class="account-card">
 
-  <!-- SIGNATURE -->
-  <section class="signature" id="collection">
-    <div class="section-header">
-      <h2 class="section-title">Our Signature Pieces</h2>
-    </div>
-    <div class="signature-single">
-      <div class="sig-product">
-        <div class="sig-product-img">
-          <img src="https://images.pexels.com/photos/15046702/pexels-photo-15046702.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Ivory Hijab">
-          <a href="#" class="sig-product-link"></a>
-        </div>
-        <div class="sig-product-info">
-          <a href="#" class="sig-product-name">Ivory Hijab</a>
-          <p class="sig-product-price">124,00 €</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- NOTRE HISTOIRE -->
-  <section class="histoire">
-    <div class="histoire-inner">
-
-      <div class="histoire-photo">
-        <img src="edi.webp" alt="Our Story — BELULI">
+      <!-- Tabs -->
+      <div class="account-tabs">
+        <button class="account-tab active" onclick="switchTab('login', this)">Log In</button>
+        <button class="account-tab" onclick="switchTab('register', this)">Register</button>
       </div>
 
-      <div class="histoire-text">
-        <span class="section-tag">Our Story</span>
-        <h2 class="histoire-title">Born between<br><em>two worlds</em></h2>
-        <p class="histoire-desc">Raised in the world of textiles and haute couture, and shaped by the values of modesty, BELULI was born from a space in between. A space where elegance is not loud, but intentional. Where tradition is not left behind, but elevated.</p>
-        <p class="histoire-desc">BELULI is not just about clothing. It is about presence, identity, and intention.</p>
-        <a href="our-story.html" class="histoire-cta">Read our story</a>
-      </div>
+      <!-- LOG IN FORM -->
+      <form class="account-form active" id="form-login">
+        <div class="account-brand">
+          <span class="account-brand-name">Beluli</span>
+          <span class="account-brand-sub">Member Access</span>
+        </div>
+
+        <div class="account-field">
+          <label class="account-label">Email</label>
+          <input type="email" class="account-input" placeholder="your@email.com" />
+        </div>
+
+        <div class="account-field">
+          <label class="account-label">Password</label>
+          <input type="password" class="account-input" placeholder="••••••••" />
+        </div>
+
+        <button type="submit" class="account-btn">Sign In</button>
+
+        <a href="#" class="account-forgot">Forgot your password?</a>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form class="account-form" id="form-register">
+        <div class="account-brand">
+          <span class="account-brand-name">Beluli</span>
+          <span class="account-brand-sub">Create an Account</span>
+        </div>
+
+        <div class="account-field">
+          <label class="account-label">First Name</label>
+          <input type="text" class="account-input" placeholder="Your first name" />
+        </div>
+
+        <div class="account-field">
+          <label class="account-label">Last Name</label>
+          <input type="text" class="account-input" placeholder="Your last name" />
+        </div>
+
+        <div class="account-field">
+          <label class="account-label">Email</label>
+          <input type="email" class="account-input" placeholder="your@email.com" />
+        </div>
+
+        <div class="account-field">
+          <label class="account-label">Password</label>
+          <input type="password" class="account-input" placeholder="••••••••" />
+        </div>
+
+        <button type="submit" class="account-btn">Create Account</button>
+
+        <p class="account-note">By creating an account, you agree to our<br>Terms & Conditions and Privacy Policy.</p>
+      </form>
 
     </div>
-
-    <div class="histoire-picks">
-      <a href="shops.html" class="histoire-pick">
-        <div class="histoire-pick-img">
-          <img src="https://images.pexels.com/photos/15046702/pexels-photo-15046702.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ivory Hijab" width="600" height="800" loading="lazy">
-        </div>
-        <div class="histoire-pick-meta">
-          <span class="histoire-pick-name">Ivory Hijab</span>
-          <span class="histoire-pick-price">124,00 €</span>
-        </div>
-      </a>
-      <a href="shops.html" class="histoire-pick">
-        <div class="histoire-pick-img">
-          <img src="https://images.pexels.com/photos/6311475/pexels-photo-6311475.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Linen Hijab" width="600" height="800" loading="lazy">
-        </div>
-        <div class="histoire-pick-meta">
-          <span class="histoire-pick-name">Linen Hijab</span>
-          <span class="histoire-pick-price">98,00 €</span>
-        </div>
-      </a>
-      <a href="shops.html" class="histoire-pick">
-        <div class="histoire-pick-img">
-          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Night Abaya" width="600" height="800" loading="lazy">
-        </div>
-        <div class="histoire-pick-meta">
-          <span class="histoire-pick-name">Night Abaya</span>
-          <span class="histoire-pick-price">289,00 €</span>
-        </div>
-      </a>
-      <a href="shops.html" class="histoire-pick">
-        <div class="histoire-pick-img">
-          <img src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Silk Veil Set" width="600" height="800" loading="lazy">
-        </div>
-        <div class="histoire-pick-meta">
-          <span class="histoire-pick-name">Silk Veil Set</span>
-          <span class="histoire-pick-price">156,00 €</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- FULLSCREEN IMAGE -->
-  <section class="fullscreen-img">
-    <img src="https://images.pexels.com/photos/5973412/pexels-photo-5973412.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="BELULI Collection">
-  </section>
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -1875,7 +1928,7 @@
         <a href="#">Lookbook</a>
         <a href="#">Size Guide</a>
         <a href="#">Care Guide</a>
-        <a href="#">Terms & Conditions</a>
+        <a href="#">Terms &amp; Conditions</a>
       </div>
 
       <div class="footer-col">
@@ -1886,7 +1939,6 @@
         <a href="#">FAQ</a>
       </div>
 
-    </div>
     </div>
 
     <!-- NEWSLETTER + PAYMENT -->
@@ -1936,32 +1988,12 @@
   </footer>
 
   <script>
-    (function () {
-      var cb = document.getElementById('site-nav');
-      var burger = document.getElementById('nav-burger');
-      var drawer = document.getElementById('site-nav-drawer');
-      if (!cb || !burger) return;
-      function sync() {
-        var open = cb.checked;
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-        if (drawer && 'inert' in drawer) drawer.inert = !open;
-      }
-      cb.addEventListener('change', sync);
-      sync();
-      document.querySelectorAll('.site-nav-drawer-nav a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          cb.checked = false;
-          sync();
-        });
-      });
-      window.addEventListener('resize', function () {
-        if (window.matchMedia('(min-width: 769px)').matches) {
-          cb.checked = false;
-          sync();
-        }
-      });
-    })();
+    function switchTab(tab, btn) {
+      document.querySelectorAll('.account-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.account-form').forEach(f => f.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('form-' + tab).classList.add('active');
+    }
   </script>
 
   <script>
@@ -1998,46 +2030,6 @@
     });
   </script>
 
-  <script>
-    window.addEventListener('load', function () {
-      var signature = document.querySelector('.signature');
-      var sectionHeader = document.querySelector('.signature .section-header');
-      var sectionTitle = document.querySelector('.signature .section-title');
-      var signatureSingle = document.querySelector('.signature .signature-single');
-      var sigProduct = document.querySelector('.signature .sig-product');
-
-      if (!signature || !sectionHeader || !sectionTitle || !signatureSingle || !sigProduct) {
-        // #region agent log
-        fetch('http://127.0.0.1:7715/ingest/2ad57152-fc66-47a4-9331-452be694f7a6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'8657e9'},body:JSON.stringify({sessionId:'8657e9',runId:'pre-fix',hypothesisId:'H5_missing_nodes',location:'index.html:1866',message:'Signature debug nodes missing',data:{hasSignature:!!signature,hasHeader:!!sectionHeader,hasTitle:!!sectionTitle,hasSingle:!!signatureSingle,hasProduct:!!sigProduct},timestamp:Date.now()})}).catch(()=>{});
-        // #endregion
-        return;
-      }
-
-      var signatureStyles = window.getComputedStyle(signature);
-      var sectionHeaderStyles = window.getComputedStyle(sectionHeader);
-      var sectionTitleStyles = window.getComputedStyle(sectionTitle);
-      var signatureSingleStyles = window.getComputedStyle(signatureSingle);
-      var titleRect = sectionTitle.getBoundingClientRect();
-      var productRect = sigProduct.getBoundingClientRect();
-      var visualGap = Math.round(productRect.top - titleRect.bottom);
-
-      // #region agent log
-      fetch('http://127.0.0.1:7715/ingest/2ad57152-fc66-47a4-9331-452be694f7a6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'8657e9'},body:JSON.stringify({sessionId:'8657e9',runId:'pre-fix',hypothesisId:'H1_h2_default_margin',location:'index.html:1883',message:'Section title computed margins',data:{titleMarginTop:sectionTitleStyles.marginTop,titleMarginBottom:sectionTitleStyles.marginBottom},timestamp:Date.now()})}).catch(()=>{});
-      // #endregion
-
-      // #region agent log
-      fetch('http://127.0.0.1:7715/ingest/2ad57152-fc66-47a4-9331-452be694f7a6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'8657e9'},body:JSON.stringify({sessionId:'8657e9',runId:'pre-fix',hypothesisId:'H2_header_margin',location:'index.html:1888',message:'Section header spacing values',data:{headerMarginBottom:sectionHeaderStyles.marginBottom,headerPaddingBottom:sectionHeaderStyles.paddingBottom},timestamp:Date.now()})}).catch(()=>{});
-      // #endregion
-
-      // #region agent log
-      fetch('http://127.0.0.1:7715/ingest/2ad57152-fc66-47a4-9331-452be694f7a6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'8657e9'},body:JSON.stringify({sessionId:'8657e9',runId:'pre-fix',hypothesisId:'H3_signature_spacing',location:'index.html:1893',message:'Signature and signature-single spacing',data:{signaturePaddingTop:signatureStyles.paddingTop,signaturePaddingBottom:signatureStyles.paddingBottom,signatureSingleMarginTop:signatureSingleStyles.marginTop},timestamp:Date.now()})}).catch(()=>{});
-      // #endregion
-
-      // #region agent log
-      fetch('http://127.0.0.1:7715/ingest/2ad57152-fc66-47a4-9331-452be694f7a6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'8657e9'},body:JSON.stringify({sessionId:'8657e9',runId:'pre-fix',hypothesisId:'H4_visual_gap_or_viewport_override',location:'index.html:1898',message:'Visual gap and viewport info',data:{visualGapPx:visualGap,viewportWidth:window.innerWidth},timestamp:Date.now()})}).catch(()=>{});
-      // #endregion
-    });
-  </script>
 
 </body>
 </html>
