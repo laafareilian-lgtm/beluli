@@ -107,14 +107,20 @@
     .cart-badge {
       position: absolute;
       top: -4px; right: -6px;
-      background: var(--accent);
-      color: white;
+      background: currentColor;
+      color: var(--warm-white);
       font-size: 8px;
       font-weight: 600;
       width: 14px; height: 14px;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-family: 'Jost', sans-serif;
+    }
+    .header-icon:active .cart-badge,
+    .header-icon:focus .cart-badge,
+    .header-icon:visited .cart-badge {
+      color: var(--warm-white);
+      background: currentColor;
     }
 
     .logo-wrap {
