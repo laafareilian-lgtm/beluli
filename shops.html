@@ -125,7 +125,7 @@
     /* PAGE BOUTIQUE — catalogue épuré */
     .shop-page {
       padding: 120px 40px 100px;
-      max-width: 1200px;
+      max-width: 1360px;
       margin: 0 auto;
     }
 
@@ -133,39 +133,39 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 40px;
+      gap: 24px;
+      margin-bottom: 44px;
     }
 
     .shop-filter {
       font-family: 'Jost', sans-serif;
-      font-size: 9.5px;
-      letter-spacing: 0.22em;
+      font-size: 11px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       font-weight: 400;
-      padding: 12px 22px;
-      border: 1px solid var(--border);
+      padding: 6px 0;
+      border: none;
       background: transparent;
       color: var(--mid);
       cursor: pointer;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
     }
 
     .shop-filter:hover {
-      border-color: var(--charcoal);
       color: var(--charcoal);
+      border-bottom-color: rgba(26,20,14,0.4);
     }
 
     .shop-filter.is-active {
-      background: var(--charcoal);
-      border-color: var(--charcoal);
-      color: var(--cream);
+      color: var(--charcoal);
+      border-bottom-color: var(--charcoal);
     }
 
     .shop-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
 
     .shop-card {
@@ -202,23 +202,23 @@
     }
 
     .shop-card-info {
-      padding: 18px 12px 28px;
-      text-align: center;
+      padding: 16px 4px 26px;
+      text-align: left;
     }
 
     .shop-card-name {
       font-family: 'Jost', sans-serif;
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 400;
       color: var(--charcoal);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       letter-spacing: 0.02em;
     }
 
     .shop-card-price {
       font-size: 11px;
       color: var(--mid);
-      letter-spacing: 0.06em;
+      letter-spacing: 1px;
       font-weight: 300;
     }
 
@@ -322,7 +322,7 @@
     .nav-drawer-nav a:hover::after { transform: scaleX(1); }
     .nav-drawer-nav a:first-of-type { border-top: none; }
     .nav-drawer-nav a:hover { padding-left: 8px; }
-    .nav-drawer-nav a.is-active { color: var(--accent); }
+    .nav-drawer-nav a.is-active { color: var(--charcoal); }
 
     .nav-overlay {
       position: fixed;
