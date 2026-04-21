@@ -6,7 +6,7 @@
   <title>BELULI — La boutique</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Jost', sans-serif !important; }
 
     :root {
       --cream: #f7f4ef;
@@ -164,12 +164,12 @@
 
     .shop-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
     }
 
     .shop-card {
-      background: var(--cream);
+      background: transparent;
       position: relative;
     }
 
@@ -186,7 +186,7 @@
     .shop-card-img {
       aspect-ratio: 3 / 4;
       overflow: hidden;
-      background: var(--border);
+      background: transparent;
     }
 
     .shop-card-img img {
@@ -207,7 +207,7 @@
     }
 
     .shop-card-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Jost', sans-serif;
       font-size: 19px;
       font-weight: 400;
       color: var(--charcoal);
@@ -297,7 +297,7 @@
 
     .nav-drawer-nav a {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(24px, 5vw, 32px);
+      font-size: clamp(20px, 4.2vw, 24px);
       font-weight: 300;
       color: var(--charcoal);
       text-decoration: none;
@@ -631,6 +631,30 @@
           <div class="shop-card-info">
             <h2 class="shop-card-name">Abaya longue ivoire</h2>
             <p class="shop-card-price">235,00 €</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="shop-card" data-category="hijab">
+        <a href="#" class="shop-card-link">
+          <div class="shop-card-img">
+            <img src="https://images.pexels.com/photos/6311607/pexels-photo-6311607.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Hijab Dune" loading="lazy" width="600" height="800" />
+          </div>
+          <div class="shop-card-info">
+            <h2 class="shop-card-name">Hijab Dune</h2>
+            <p class="shop-card-price">109,00 €</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="shop-card" data-category="abaya">
+        <a href="#" class="shop-card-link">
+          <div class="shop-card-img">
+            <img src="https://images.pexels.com/photos/7679855/pexels-photo-7679855.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Abaya Nacrée" loading="lazy" width="600" height="800" />
+          </div>
+          <div class="shop-card-info">
+            <h2 class="shop-card-name">Abaya Nacrée</h2>
+            <p class="shop-card-price">199,00 €</p>
           </div>
         </a>
       </article>

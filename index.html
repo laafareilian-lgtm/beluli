@@ -6,7 +6,7 @@
   <title>BELULI — New Collection</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Jost', sans-serif !important; }
 
     :root {
       --cream: #f7f4ef;
@@ -51,6 +51,22 @@
     header:hover {
       background: var(--warm-white);
       border-bottom: 1px solid var(--border);
+    }
+
+    header:not(.scrolled):not(:hover) .header-icon {
+      color: #fff;
+    }
+    header:not(.scrolled):not(:hover) .nav-burger-line {
+      background: #fff;
+    }
+    header:not(.scrolled):not(:hover) .logo-wrap img {
+      filter: brightness(0) invert(1);
+      mix-blend-mode: normal;
+    }
+    header.scrolled .logo-wrap img,
+    header:hover .logo-wrap img {
+      filter: none;
+      mix-blend-mode: multiply;
     }
 
     /* header gauche + droite */
@@ -208,7 +224,7 @@
     }
 
     .hero-lv-title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Jost', sans-serif;
       font-size: clamp(40px, 5.5vw, 56px);
       font-weight: 300;
       color: #fff;
@@ -422,7 +438,7 @@
 
     /* nom + prix sous la photo — jamais masqués */
     .product-info { padding: 16px 4px 26px; }
-    .product-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; letter-spacing: 0.02em; }
+    .product-name { font-family: 'Jost', sans-serif; font-size: 20px; font-weight: 400; color: var(--charcoal); margin-bottom: 4px; letter-spacing: 0.02em; }
     .product-price { font-size: 11px; color: var(--mid); letter-spacing: 1px; font-weight: 300; }
 
 
@@ -431,8 +447,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 420px;
-      margin: 20px auto 28px;
+      max-width: 340px;
+      margin: 20px auto 48px;
     }
 
     .sig-product-img {
@@ -461,7 +477,7 @@
     }
 
     .sig-product-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Jost', sans-serif;
       font-size: 17px;
       font-weight: 400;
       color: var(--charcoal);
@@ -487,6 +503,9 @@
     .signature {
       padding: 48px 40px 0;
       background: var(--warm-white);
+    }
+    .signature .section-title {
+      font-size: clamp(30px, 4.2vw, 44px);
     }
 
     .signature .section-header {
@@ -641,7 +660,7 @@
     }
 
     .cat-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Jost', sans-serif;
       font-size: clamp(34px, 3.5vw, 54px);
       font-weight: 300;
       color: var(--charcoal);
@@ -1655,7 +1674,7 @@
 
     .nav-drawer-nav a {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 300;
       color: var(--charcoal);
       text-decoration: none;
@@ -1802,7 +1821,7 @@
       </div>
 
       <div class="histoire-text">
-        <span class="section-tag">Our Story</span>
+        <span class="section-tag"></span>
         <h2 class="histoire-title">Born between<br><em>two worlds</em></h2>
         <p class="histoire-desc">Raised in the world of textiles and haute couture, and shaped by the values of modesty, BELULI was born from a space in between. A space where elegance is not loud, but intentional. Where tradition is not left behind, but elevated.</p>
         <p class="histoire-desc">BELULI is not just about clothing. It is about presence, identity, and intention.</p>
