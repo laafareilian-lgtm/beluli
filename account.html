@@ -90,23 +90,24 @@
     .cart-icon { position: relative; }
     .cart-badge {
       position: absolute;
-      top: -4px; right: -6px;
-      background: currentColor;
-      color: var(--warm-white);
-      font-size: 8px;
+      top: 0;
+      right: 0;
+      transform: translate(55%, -35%);
+      background: var(--charcoal);
+      color: #fff;
+      font-size: 10px;
       font-weight: 600;
-      width: 14px; height: 14px;
+      line-height: 1;
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: 'Jost', sans-serif;
+      pointer-events: none;
     }
-    .header-icon:active .cart-badge,
-    .header-icon:focus .cart-badge,
-    .header-icon:visited .cart-badge {
-      color: var(--warm-white);
-      background: currentColor;
-    }
-
+    
     .logo-wrap {
       position: absolute;
       left: 50%;
@@ -128,18 +129,6 @@
 
     .nav-right { display: flex; align-items: center; gap: 24px; }
     .nav-right a { font-size: 10px; letter-spacing: 1.5px; }
-
-    .cart-link { position: relative; display: inline-block; }
-    .cart-badge {
-      position: absolute;
-      top: -6px; right: -8px;
-      background: var(--charcoal);
-      color: white;
-      font-size: 8px;
-      width: 14px; height: 14px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-    }
 
     /* HERO */
     .hero {
