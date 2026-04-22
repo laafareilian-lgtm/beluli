@@ -3,8 +3,1131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BELULI — Our Story</title>
+  <title>Beluli · Our Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Jost', sans-serif !important; }
+
+    :root {
+      --cream: #f7f4ef;
+      --warm-white: #fdfbf8;
+      --charcoal: #1a1a1a;
+      --mid: #5a5550;
+      --light: #b8b0a8;
+      --accent: #c9a96e;
+      --border: #e8e2da;
+      --paper: #e9e4da;
+      --paper-ink: #1c1914;
+      --rule: rgba(26, 20, 14, 0.22);
+      --rule-light: rgba(26, 20, 14, 0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--warm-white);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* Rendu journal / papier (page Our Story uniquement) */
+    body.story-paper {
+      color: var(--paper-ink);
+      background-color: var(--warm-white);
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 25px,
+        rgba(26, 20, 14, 0.018) 25px,
+        rgba(26, 20, 14, 0.018) 26px
+      );
+    }
+
+    body.story-paper .story-main {
+      background: var(--warm-white);
+    }
+
+    body.story-paper .story-body,
+    body.story-paper .story-beyond-lead,
+    body.story-paper .story-pillar p {
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphenate-limit-chars: 6 3 3;
+    }
+
+    body.story-paper .story-kicker {
+      font-variant: small-caps;
+      letter-spacing: 0.28em;
+      border-bottom: 1px solid var(--rule-light);
+      padding-bottom: 10px;
+      margin-bottom: 22px;
+    }
+
+    body.story-paper .story-hero {
+      background: var(--cream);
+      border-top: none;
+      border-bottom: 1px solid var(--rule);
+      box-shadow: none;
+    }
+
+    body.story-paper .story-hero-inner {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    body.story-paper .story-hero-title {
+      font-weight: 400;
+      padding-bottom: clamp(20px, 3vh, 28px);
+      border-bottom: 1px solid var(--rule-light);
+    }
+
+    body.story-paper .story-hero-cols .story-body:first-child {
+      border-right: 1px solid var(--rule-light);
+      padding-right: clamp(18px, 3vw, 32px);
+    }
+
+    @media (min-width: 901px) {
+      body.story-paper .story-hero-cols .story-body:first-of-type::first-letter {
+        float: left;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3.35em;
+        line-height: 0.82;
+        font-weight: 400;
+        padding-right: 0.14em;
+        margin-top: 0.06em;
+        color: var(--charcoal);
+      }
+    }
+
+    body.story-paper .story-founder {
+      background: rgba(245, 241, 234, 0.75);
+      border-top: 1px solid var(--rule-light);
+      border-bottom: 1px solid var(--rule-light);
+    }
+
+    body.story-paper .story-founder-copy {
+      border-left: 3px double var(--rule);
+      padding-left: clamp(20px, 3vw, 36px);
+    }
+
+    body.story-paper .story-founder-copy .story-kicker {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 18px;
+    }
+
+    body.story-paper .story-founder-copy .story-section-title {
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    body.story-paper .story-founder-main,
+    body.story-paper .story-founder-accent {
+      box-shadow: none;
+      border: 1px solid var(--rule);
+    }
+
+    body.story-paper .story-founder-accent {
+      border-width: 5px;
+      border-color: rgba(252, 249, 244, 0.95);
+      outline: 1px solid var(--rule-light);
+      outline-offset: 0;
+    }
+
+    body.story-paper .story-quote-row {
+      background: rgba(252, 249, 244, 0.9);
+    }
+
+    body.story-paper .story-pull {
+      font-style: normal;
+      font-weight: 400;
+      padding-left: clamp(16px, 2.5vw, 24px);
+      border-left: 4px solid var(--charcoal);
+    }
+
+    body.story-paper .story-mood {
+      border: 1px solid var(--rule);
+      padding: 6px;
+      background: #faf7f2;
+      box-shadow: 2px 3px 0 rgba(26, 20, 14, 0.06);
+    }
+
+    body.story-paper .story-mood img {
+      filter: saturate(0.85) contrast(1.05);
+    }
+
+    body.story-paper .story-beyond {
+      background: rgba(245, 241, 234, 0.72);
+      border-top: 1px solid var(--rule-light);
+    }
+
+    body.story-paper .story-beyond-header .story-kicker {
+      display: inline-block;
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 16px;
+    }
+
+    body.story-paper .story-beyond-title {
+      font-weight: 400;
+    }
+
+    body.story-paper .story-pillars {
+      border: none;
+      gap: clamp(20px, 4vw, 40px);
+      background: transparent;
+    }
+
+    body.story-paper .story-pillar {
+      background: transparent;
+      border-right: none;
+      padding-bottom: 28px;
+    }
+
+    body.story-paper .story-pillar h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      border-bottom: none;
+    }
+
+    body.story-paper .story-pillar-img {
+      border-bottom: none;
+      margin-bottom: 22px;
+    }
+
+    body.story-paper .story-closing {
+      border-top: 3px double var(--rule);
+      background: #1a1816;
+    }
+
+    body.story-paper .story-closing p {
+      font-style: normal;
+      border-top: 1px solid rgba(247, 244, 239, 0.12);
+      padding-top: clamp(12px, 2vh, 20px);
+      max-width: 34em;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s ease, border-color 0.4s ease;
+    }
+
+    header.scrolled,
+    header:hover {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-left { display: flex; align-items: center; }
+
+    .nav-burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .nav-burger-line {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    .header-right { display: flex; align-items: center; gap: 20px; }
+
+    .header-icon {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+    a.header-icon { text-decoration: none; }
+    .header-icon:hover { opacity: 0.6; }
+
+    .cart-icon { position: relative; }
+    .cart-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(55%, -35%);
+      background: var(--charcoal);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Jost', sans-serif;
+      pointer-events: none;
+    }
+
+    .logo-wrap {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .logo-wrap a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+    }
+    .logo-wrap img {
+      height: 44px;
+      width: auto;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    /* Page Our Story */
+    .story-main {
+      padding-top: 72px;
+    }
+
+    .story-kicker {
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--mid);
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    .story-hero {
+      background: var(--cream);
+      padding: clamp(72px, 12vh, 120px) clamp(28px, 5vw, 80px) clamp(64px, 10vh, 100px);
+      text-align: center;
+    }
+
+    .story-hero-inner {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .story-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5.2vw, 64px);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(36px, 6vh, 52px);
+    }
+
+    .story-hero-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 4vw, 48px);
+      text-align: left;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .story-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.95;
+    }
+
+    .story-body + .story-body { margin-top: 1em; }
+
+    .story-founder {
+      background: var(--warm-white);
+      padding: clamp(72px, 10vh, 120px) 0;
+    }
+
+    .story-founder-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 0;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 4vw, 48px);
+    }
+
+    .story-founder-visual {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .story-founder-main {
+      margin: 0;
+      width: 72%;
+      max-width: 420px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      box-shadow: 0 24px 60px rgba(26, 20, 14, 0.08);
+    }
+
+    .story-founder-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(1) contrast(1.06);
+      transition: transform 0.75s ease;
+    }
+
+    .story-founder-main:hover img { transform: scale(1.03); }
+
+    .story-founder-accent {
+      position: absolute;
+      right: 8%;
+      bottom: 0;
+      width: 38%;
+      max-width: 200px;
+      margin: 0;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      border: 6px solid var(--warm-white);
+      box-shadow: 0 16px 40px rgba(26, 20, 14, 0.1);
+    }
+
+    .story-founder-accent img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(1) contrast(1.05);
+    }
+
+    .story-founder-copy {
+      padding: clamp(32px, 5vw, 72px) clamp(24px, 4vw, 64px) clamp(32px, 5vw, 72px) clamp(16px, 3vw, 40px);
+    }
+
+    .story-founder-copy .story-kicker {
+      margin-bottom: 20px;
+    }
+
+    .story-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    .story-founder-copy .story-body { max-width: 420px; }
+
+    .story-quote-row {
+      background: var(--cream);
+      padding: clamp(64px, 10vh, 112px) clamp(24px, 4vw, 48px);
+    }
+
+    .story-quote-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr minmax(0, 0.85fr);
+      gap: clamp(40px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .story-pull {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3.8vw, 44px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.2;
+      color: var(--charcoal);
+      letter-spacing: -0.01em;
+    }
+
+    .story-mood {
+      margin: 0;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: var(--border);
+    }
+
+    .story-mood img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.92) contrast(1.02);
+    }
+
+    .story-beyond {
+      padding: clamp(72px, 10vh, 120px) clamp(24px, 4vw, 48px) clamp(80px, 12vh, 140px);
+      background: var(--warm-white);
+      text-align: center;
+    }
+
+    .story-beyond-header {
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .story-beyond-header .story-kicker {
+      text-align: center;
+    }
+
+    .story-beyond-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4.2vw, 52px);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--charcoal);
+      margin-bottom: 22px;
+    }
+
+    .story-beyond-lead {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.95;
+    }
+
+    .story-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(20px, 4vw, 40px);
+      max-width: 1000px;
+      margin: 0 auto;
+      background: transparent;
+    }
+
+    .story-pillar {
+      background: var(--warm-white);
+      padding: 0 0 28px;
+      text-align: left;
+    }
+
+    .story-pillar-img {
+      aspect-ratio: 1;
+      overflow: hidden;
+      margin-bottom: 22px;
+      background: var(--cream);
+    }
+
+    .story-pillar-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.65s ease;
+    }
+
+    .story-pillar:hover .story-pillar-img img {
+      transform: scale(1.04);
+    }
+
+    .story-pillar h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--charcoal);
+      letter-spacing: 0.03em;
+      margin: 0 24px 12px;
+    }
+
+    .story-pillar p {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.85;
+      margin: 0 24px;
+    }
+
+    .story-closing {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: clamp(56px, 8vh, 88px) clamp(24px, 4vw, 48px);
+      text-align: center;
+    }
+
+    .story-closing p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 2.8vw, 30px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.45;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    /* Drawer */
+    .nav-drawer {
+      position: fixed;
+      top: 0; left: 0;
+      width: min(320px, 92vw);
+      height: 100vh;
+      background: var(--warm-white);
+      z-index: 999;
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-drawer.open { transform: translateX(0); }
+
+    .nav-drawer-inner {
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+    }
+
+    .nav-drawer-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--charcoal);
+      line-height: 1;
+      padding: 4px 8px;
+    }
+    .nav-drawer-close:hover { opacity: 0.5; }
+
+    .nav-drawer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 40px;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-drawer-logo {
+      height: 48px;
+      width: auto;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    .nav-drawer-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .nav-drawer-nav a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 4.2vw, 24px);
+      font-weight: 300;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      padding: 14px 0;
+      position: relative;
+      transition: color 0.2s, padding-left 0.3s;
+    }
+    .nav-drawer-nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .nav-drawer-nav a:hover::after { transform: scaleX(1); }
+    .nav-drawer-nav a:hover { padding-left: 8px; }
+    .nav-drawer-nav a.is-active { color: var(--charcoal); }
+
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,10,6,0.4);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+    .nav-overlay.open { opacity: 1; pointer-events: all; }
+
+    /* Footer (aligné shops) */
+    footer { background: #f7f4ef; padding: 80px 40px 40px; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .footer-brand > a { text-decoration: none; display: inline-block; }
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--charcoal);
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .footer-brand-name:hover { color: var(--accent); }
+
+    .footer-brand p { font-size: 11px; color: rgba(26,20,14,0.7); line-height: 1.9; font-weight: 300; max-width: 240px; }
+
+    .footer-col-title { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(26,20,14,0.55); font-weight: 500; margin-bottom: 20px; }
+    .footer-col a { display: block; font-size: 11px; color: rgba(26,20,14,0.75); text-decoration: none; margin-bottom: 12px; font-weight: 300; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--charcoal); }
+
+    .footer-middle {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 48px 0;
+      border-top: 1px solid rgba(26,20,14,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 32px;
+    }
+
+    .footer-newsletter-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--charcoal);
+      letter-spacing: 0.03em;
+      margin: 0 0 6px;
+    }
+
+    .footer-newsletter-sub {
+      font-size: 11px;
+      color: rgba(26,20,14,0.6);
+      margin: 0 0 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-newsletter-form {
+      display: flex;
+      gap: 0;
+    }
+
+    .footer-newsletter-input {
+      flex: 1;
+      background: rgba(26,20,14,0.04);
+      border: 1px solid rgba(26,20,14,0.15);
+      border-right: none;
+      color: var(--charcoal);
+      padding: 12px 16px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      outline: none;
+      font-family: 'Jost', sans-serif;
+      max-width: 280px;
+    }
+    .footer-newsletter-input::placeholder { color: rgba(26,20,14,0.3); }
+
+    .footer-newsletter-btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .footer-newsletter-btn:hover { opacity: 0.85; }
+
+    .footer-payment { text-align: right; }
+
+    .footer-payment-icons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      margin-top: 14px;
+    }
+
+    .pay-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(26,20,14,0.2);
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 9px;
+      letter-spacing: 1px;
+      color: rgba(26,20,14,0.7);
+      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+      background: rgba(26,20,14,0.04);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-copy { font-size: 10px; color: rgba(26,20,14,0.55); letter-spacing: 1px; font-weight: 300; }
+    .footer-socials { display: flex; gap: 20px; }
+    .footer-socials a { color: rgba(26,20,14,0.5); text-decoration: none; transition: color 0.2s, transform 0.2s; display: flex; align-items: center; }
+    .footer-socials a:hover { color: var(--charcoal); transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+      .story-hero-cols { grid-template-columns: 1fr; }
+      body.story-paper .story-hero-cols .story-body:first-child {
+        border-right: none;
+        padding-right: 0;
+      }
+      body.story-paper .story-body,
+      body.story-paper .story-beyond-lead,
+      body.story-paper .story-pillar p {
+        text-align: left;
+        hyphens: none;
+        -webkit-hyphens: none;
+      }
+      .story-founder-grid {
+        grid-template-columns: 1fr;
+      }
+      .story-founder-visual {
+        min-height: auto;
+        padding: 0 0 24px;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .story-founder-main { width: 78%; }
+      .story-founder-accent { right: 0; bottom: -12px; width: 42%; }
+      .story-founder-copy { padding: 32px 0 0; text-align: center; }
+      body.story-paper .story-founder-copy {
+        border-left: none;
+        padding-left: 0;
+      }
+      .story-founder-copy .story-kicker { text-align: center; }
+      .story-founder-copy .story-body { margin-left: auto; margin-right: auto; text-align: left; }
+      .story-quote-inner {
+        grid-template-columns: 1fr;
+      }
+      .story-pillars {
+        grid-template-columns: 1fr;
+      }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+      .footer-top { grid-template-columns: 1fr; gap: 28px; }
+      footer { padding: 48px 16px max(28px, env(safe-area-inset-bottom)); }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+      .footer-socials { flex-wrap: wrap; justify-content: center; }
+      .footer-brand-name { font-size: 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .story-founder-main img,
+      .story-pillar-img img { transition: none; }
+      .story-founder-main:hover img,
+      .story-pillar:hover .story-pillar-img img { transform: none; }
+    }
+  </style>
 </head>
-<body>
+<body class="story-paper">
+
+  <header>
+    <div class="header-left">
+      <button class="nav-burger" id="nav-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="nav-burger-line"></span>
+        <span class="nav-burger-line"></span>
+        <span class="nav-burger-line"></span>
+      </button>
+    </div>
+
+    <div class="logo-wrap">
+      <a href="index.html" aria-label="Beluli, accueil"><img src="belpng.png" alt="Beluli" /></a>
+    </div>
+
+    <div class="header-right">
+      <button class="header-icon" type="button" aria-label="Recherche">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+      <a href="account.html" class="header-icon" aria-label="Mon compte">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+      <a href="cart.html" class="header-icon cart-icon" aria-label="Panier">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+    <div class="nav-drawer-inner">
+      <button class="nav-drawer-close" id="nav-close" type="button" aria-label="Fermer le menu">&times;</button>
+      <div class="nav-drawer-brand">
+        <a href="index.html"><img src="belpng.png" class="nav-drawer-logo" alt="Beluli" /></a>
+      </div>
+      <nav class="nav-drawer-nav" aria-label="Navigation">
+        <a href="index.html">Home</a>
+        <a href="shops.html">Shop</a>
+        <a href="#">Scarves</a>
+        <a href="#">Join Us</a>
+        <a href="our-story.html" class="is-active" aria-current="page">Our Story</a>
+      </nav>
+    </div>
+  </div>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <main class="story-main" id="story">
+    <section class="story-hero" aria-labelledby="story-hero-heading">
+      <div class="story-hero-inner">
+        <span class="story-kicker">Our story</span>
+        <h1 id="story-hero-heading" class="story-hero-title">Beluli was never just an idea. It lived inside me long before it had a name.</h1>
+        <div class="story-hero-cols">
+          <p class="story-body">I grew up between the world of textiles and haute couture (precision, patience, quiet excellence) and another world shaped by modesty, values, and identity. For a long time, those two worlds felt separate: luxury on one side, often misunderstood simplicity on the other.</p>
+          <p class="story-body">I stood in the middle. That is where the need was born: to create something that never asks you to choose between elegance and integrity, only to wear both, softly and with intention.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-founder" aria-labelledby="story-founder-heading">
+      <div class="story-founder-grid">
+        <div class="story-founder-visual">
+          <figure class="story-founder-main">
+            <img src="bel.jpeg" alt="Portrait de la fondatrice, Beluli" width="800" height="1067" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="story-founder-accent">
+            <img src="edi.webp" alt="" width="600" height="800" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+        <div class="story-founder-copy">
+          <span class="story-kicker">From the founder</span>
+          <h2 id="story-founder-heading" class="story-section-title">Between atelier and identity</h2>
+          <p class="story-body">I saw fabrics before I understood fashion. I learned that every stitch carries meaning and every detail has a purpose, lessons from a father immersed in craft.</p>
+          <p class="story-body">Beluli is the answer to a conviction: tradition is not erased, it is elevated; modesty is not hidden, it is refined. We do not compete for noise. We express a presence that lasts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-quote-row" aria-label="Citation">
+      <div class="story-quote-inner">
+        <blockquote class="story-pull">“Beauty does not need to be loud. Strength can be gentle, and identity can be worn with pride, without compromise.”</blockquote>
+        <figure class="story-mood">
+          <img src="affiche.jpeg" alt="Textures et matières Beluli" width="1200" height="900" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="story-beyond" aria-labelledby="story-beyond-heading">
+      <div class="story-beyond-header">
+        <span class="story-kicker">Beyond the brand</span>
+        <h2 id="story-beyond-heading" class="story-beyond-title">A return to meaning</h2>
+        <p class="story-beyond-lead">Inspired by Moroccan heritage and a vision of modern femininity, each piece is cut and finished with patience, not for fast trends, but for emotion that endures.</p>
+      </div>
+      <div class="story-pillars">
+        <article class="story-pillar">
+          <div class="story-pillar-img">
+            <img src="oui.webp" alt="Héritage marocain" width="800" height="800" loading="lazy" decoding="async" />
+          </div>
+          <h3>Moroccan soul</h3>
+          <p>Craft, culture, and intention in the cloth: a quiet echo of where we come from, carried into how we dress today.</p>
+        </article>
+        <article class="story-pillar">
+          <div class="story-pillar-img">
+            <img src="edi.webp" alt="Féminité contemporaine" width="800" height="800" loading="lazy" decoding="async" />
+          </div>
+          <h3>Modern femininity</h3>
+          <p>Timeless silhouettes and refined fabrics for the woman who leads with intention, seen in her own way.</p>
+        </article>
+        <article class="story-pillar">
+          <div class="story-pillar-img">
+            <img src="affiche.jpeg" alt="Confiance discrète" width="800" height="800" loading="lazy" decoding="async" />
+          </div>
+          <h3>Quiet confidence</h3>
+          <p>Clothing that dresses the body and expresses presence: strength in softness, elegance in simplicity, power in discretion.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="story-closing" aria-label="Conclusion">
+      <p>This is more than clothing. It is balance between heritage and evolution, and the belief that we, too, can shine in our own way.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-brand-name">Beluli</a>
+        <p>Elegant and conscious womenswear. Timeless pieces for the modern woman.</p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">Collections</p>
+        <a href="shops.html">Hijabs</a>
+        <a href="shops.html">Abayas</a>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">Information</p>
+        <a href="our-story.html">Our Story</a>
+        <a href="#">Lookbook</a>
+        <a href="#">Size Guide</a>
+        <a href="#">Care Guide</a>
+        <a href="#">Terms &amp; Conditions</a>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">Customer Service</p>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">Contact</a>
+        <a href="#">FAQ</a>
+      </div>
+
+    </div>
+
+    <div class="footer-middle">
+      <div class="footer-newsletter">
+        <p class="footer-newsletter-title">Stay in the loop</p>
+        <p class="footer-newsletter-sub">New collections, exclusive offers and Beluli news.</p>
+        <div class="footer-newsletter-form">
+          <input type="email" placeholder="Your email address" class="footer-newsletter-input" />
+          <button type="button" class="footer-newsletter-btn">Subscribe</button>
+        </div>
+      </div>
+      <div class="footer-payment">
+        <p class="footer-col-title">We accept</p>
+        <div class="footer-payment-icons">
+          <span class="pay-icon">VISA</span>
+          <span class="pay-icon">MC</span>
+          <span class="pay-icon">AMEX</span>
+          <span class="pay-icon">PayPal</span>
+          <span class="pay-icon">Apple Pay</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Beluli. All rights reserved</span>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Pinterest">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var burger = document.getElementById('nav-burger');
+      var drawer = document.getElementById('nav-drawer');
+      var overlay = document.getElementById('nav-overlay');
+      var closeBtn = document.getElementById('nav-close');
+      if (!burger || !drawer || !overlay) return;
+
+      function openMenu() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        burger.setAttribute('aria-expanded', 'true');
+        drawer.setAttribute('aria-hidden', 'false');
+      }
+      function closeMenu() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        burger.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+      }
+
+      burger.addEventListener('click', function () {
+        if (drawer.classList.contains('open')) closeMenu();
+        else openMenu();
+      });
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+
+      document.querySelectorAll('.nav-drawer-nav a').forEach(function (a) {
+        a.addEventListener('click', closeMenu);
+      });
+    })();
+
+    (function () {
+      var siteHeader = document.querySelector('header');
+      if (!siteHeader) return;
+      function onScroll() {
+        siteHeader.classList.toggle('scrolled', window.scrollY > 60);
+      }
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+
 </body>
 </html>
