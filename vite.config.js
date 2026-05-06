@@ -14,9 +14,11 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         shops: resolve(__dirname, 'shops.html'),
+        scarves: resolve(__dirname, 'scarves.html'),
         account: resolve(__dirname, 'account.html'),
         cart: resolve(__dirname, 'cart.html'),
         ourStory: resolve(__dirname, 'our-story.html'),
+        contactUs: resolve(__dirname, 'contact-us.html'),
       },
     },
   },
